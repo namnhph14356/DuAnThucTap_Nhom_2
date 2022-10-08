@@ -27,3 +27,10 @@ h1{
 .img-fluid{
   height: 200px !important;
 }
+.bigimg {
+  height: 500px !important;
+}
+
+p {
+  text-align: left !important;
+}
