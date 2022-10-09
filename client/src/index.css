@@ -20,6 +20,10 @@ code {
 .navbar-brand{
   color: white !important;
 }
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 h1{
   font-size: 18px !important;
   text-align: left !important;

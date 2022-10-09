@@ -9,9 +9,12 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send("<h1>Home Page</h1>");
 });
-mongoose.connect("mongodb://localhost:27017/nodejs")
-    .then(() => console.log("Connect db thanh cong"))
+
+const mongodbURL = 'mongodb+srv://datt:datt@cluster0.mx8euqx.mongodb.net/datt'
+mongoose.connect(mongodbURL, { useUnifiedTopology: true, useNewUrlParser: true})
+const dbConnect = mongoose.connection
+dbConnect.on('error', () => console.log('Mongo DB Connection Failed'))
+dbConnect.on('connected', () => console.log('Mongo DB Connection Successfull'))
+
 const PORT = 8000
-app.listen(PORT, () => {
-    console.log(`Server running port ${PORT}`);
-})
+app.listen(PORT, () => console.log(`Server running port ${PORT}`))
