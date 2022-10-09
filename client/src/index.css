@@ -23,6 +23,10 @@ code {
 h1{
   font-size: 18px !important;
   text-align: left !important;
+  color: black !important;
+}
+a {
+  text-decoration: none !important;
 }
 .img-fluid{
   height: 200px !important;
