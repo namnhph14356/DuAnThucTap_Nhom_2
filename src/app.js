@@ -1,14 +1,19 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+var productRouter = require('../router/productRouter')
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use('/api/products', productRouter);  
 
 app.get('/', (req, res) => {
     res.send("<h1>Home Page</h1>");
 });
+
+
+
 
 const mongodbURL = 'mongodb+srv://datt:datt@cluster0.mx8euqx.mongodb.net/datt'
 mongoose.connect(mongodbURL, { useUnifiedTopology: true, useNewUrlParser: true})
